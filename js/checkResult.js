@@ -60,8 +60,12 @@ const checkResult = {
         // On met a jour le tableau des stats
         document.querySelector('.nbplay').textContent =  localStorage.getItem("play");
         document.querySelector('.nbwin').textContent =  localStorage.getItem("win");
+        
+        const pourcentElmt = document.querySelector('.pourcentage').closest('p')
+        if (pourcentElmt.classList.contains('invisible')) {
+            pourcentElmt.classList.remove('invisible')
+        }
         let pourcent = Math.round(localStorage.getItem("win")/localStorage.getItem("play")*100);
         document.querySelector('.pourcentage').textContent =  pourcent;
-        
     },   
 }
