@@ -1,6 +1,7 @@
 const app = {
     init: function () {
         gamePlay.init();
+        statistiques.init();
     },
 };
 
