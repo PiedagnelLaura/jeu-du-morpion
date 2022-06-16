@@ -1,69 +1,51 @@
 const checkResult = {
     
     /**
-     * Permet de vérifier si l'utilisateur à gagné 
-     * quand il clique sur une case
+     * Permet de vérifier si l'utilisateur à gagné ou perdu
+     * à chaque tour de jeu
      */
     checkPlayer: function (caseElmt) {
         const listClass=caseElmt.className;
         let classArray = listClass.split(" ");
-        console.log('verif');
+      
         for (let nb =0; nb < classArray.length-1; nb++ ) {
             divSameClassElmt = document.querySelectorAll("."+classArray[nb]);
 
-            let nbX = 0;
-
+            let compteurX = 0;
+            let compteurO = 0;
             for (const divElmt of divSameClassElmt) {
                 let listClass =divElmt.className.split(" ");
                 
                 if(listClass[listClass.length-1] === "checkX") {
-                    nbX ++;
+                    compteurX ++;
+                }
+                if(listClass[listClass.length-1] === "checkO") {
+                    compteurO ++;
                 }
             }
 
-            if (nbX===3) {
-                setTimeout(checkResult.result('WIN'), 100);
-            }     
+            if (compteurX===3) {
+                setTimeout(checkResult.results('BRAVO'), 100);
+            } 
             
-        }
-        setTimeout(gamePlay.computerPlay, 80);
+            if (compteurO===3) {
+                setTimeout(checkResult.results('GAME OVER !'), 100);
+            }  
+        }  
     },
 
     /**
-     * Permet de vérifier si l'utilisateur à perdu
-     * quand le pc joue
+     * Affichage du résultat final
+     * 
      */
-     checkPC: function (caseElmt) {
-        const listClass=caseElmt.className;
-        let classArray = listClass.split(" ");
-
-        for (let nb =0; nb < classArray.length-1; nb++ ) {
-            divSameClassElmt = document.querySelectorAll("."+classArray[nb]);
-
-            let nbO = 0;
-
-            for (const divElmt of divSameClassElmt) {
-                let listClass =divElmt.className.split(" ");
-                
-                if(listClass[listClass.length-1] === "checkO") {
-                    nbO ++;
-                }
-            }
-
-            if (nbO===3) {
-                setTimeout(checkResult.result('LOOOSER'), 100);
-            }
-
+    results: function (final) {
+        buttonsElmt = document.querySelectorAll('.free');
+        for (const buttonElmt of buttonsElmt) {
+            buttonElmt.classList.add('invisible');
+            buttonElmt.classList.remove('free');
         }
-    },
 
-    result: function (final) {
-        document.querySelector('section').classList.add('invisible');
-        document.querySelector('aside').classList.remove('invisible');
-        document.querySelector('aside h2').textContent = final;
-    },
-
- 
-   
-   
+        document.querySelector('.result').classList.remove('invisible');
+        document.querySelector('.result h2').textContent = final;
+    },   
 }
