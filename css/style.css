@@ -83,7 +83,7 @@ section p {
 
 .stats {
     width: 250px;
-    height: 200px;
+    height: 240px;
     border: 2px solid rgb(137, 137, 182); 
     background-color: rgba(137, 137, 182, 0.3);
     font-style: italic;
@@ -114,6 +114,10 @@ input {
     border-radius: 5px;
 }
 
+input:hover {
+    color:white;
+    background-color: rgb(137, 137, 182); 
+}
 @media screen and (max-width: 1000px) {
     main {
         flex-direction: column;

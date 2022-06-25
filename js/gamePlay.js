@@ -38,7 +38,10 @@ const gamePlay = {
 
         // SI toutes les cases sont rempli et que le joueur n'a pas gagné, on considère qu'il a perdu
         if(buttonsForPC.length=== 0 && document.querySelector('.result').classList.contains('invisible')) {
-            setTimeout(checkResult.results('GAME OVER'), 100);
+            let nulCompteur = localStorage.getItem('nul');
+            nulCompteur++;
+            localStorage.setItem("nul", nulCompteur);
+            setTimeout(checkResult.results('MATCH NUL'), 100);
         }
 
         buttonsx2User = [];
