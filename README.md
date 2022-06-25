@@ -13,3 +13,7 @@
 - Il y a un tableau à coté de la grille du jeu pour les stats
 - Le joueur peut voir le nombre de parties jouées, le nombre de parties gagnées et son pourcentage de réussite
 - A chaque fin de partie le tableau est mis à jour
+
+## Lien du jeu
+
+https://piedagnellaura.github.io/jeu-du-morpion/
