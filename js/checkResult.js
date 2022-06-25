@@ -1,11 +1,15 @@
 const checkResult = {
-    
+
+    classx2Array : [],
+    classo2Array : [],
+
     /**
      * Permet de vérifier si l'utilisateur à gagné ou perdu
      * à chaque tour de jeu
      */
     checkPlayer: function (caseElmt) {
         const listClass=caseElmt.className;
+        
         let winCompteur = localStorage.getItem('win');
         let classArray = listClass.split(" ");
         for (let nb =0; nb < classArray.length-1; nb++ ) {
@@ -32,10 +36,25 @@ const checkResult = {
                 setTimeout(checkResult.results('BRAVO'), 100);
             } 
             
-            if (compteurO===3) {
+            else if (compteurO===3) {
                 setTimeout(checkResult.results('GAME OVER !'), 100);
             }  
-        }  
+
+            // Permet de voir si le PC peut gagné au prochain coup
+            else if (compteurO===2) {
+                if (!checkResult.classo2Array.includes(classArray[nb])) {
+                  checkResult.classo2Array.push(classArray[nb]); 
+                }               
+            } 
+
+            // Pour essayer d'empecher la victoire du joueur
+            else if (compteurX===2) {
+                if (!checkResult.classx2Array.includes(classArray[nb])) {
+                  checkResult.classx2Array.push(classArray[nb]); 
+                }               
+            }   
+        } 
+        
     },
 
     /**

@@ -17,74 +17,74 @@
         <span class="navbar-brand mb-0 h1 mx-3">Le jeu du Morpion</span>
     </nav>
 
-<main>
+    <main>
 
-    <section class="py-5">
-        <div>
-            <h1>Cliquez sur une case : </h1>
-        <div class="mt-5 line1">
-            <div class="column1 diag1 ligne1">
-                <button class="free"></button>
-                <p class=" invisible"></p>
+        <section class="py-5">
+            <div>
+                <h1>Cliquez sur une case : </h1>
+                <div class="mt-5 line1">
+                    <div class="column1 diag1 ligne1">
+                        <button class="free"></button>
+                        <p class=" invisible"></p>
+                    </div>
+                    <div class="column2 ligne1">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                    <div class="column3 diag2 ligne1">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                </div>
+                <div class="line2">
+                    <div class="column1 ligne2">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                    <div class="column2 diag1 diag2 ligne2">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                    <div class="column3 ligne2">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                </div>
+                <div class="line3">
+                    <div class="column1 diag2 ligne3">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                    <div class="column2 ligne3">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                    <div class="column3 diag1 ligne3">
+                        <button class="free"></button>
+                        <p class="invisible"></p>
+                    </div>
+                </div>
             </div>
-            <div class="column2 ligne1">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-            <div class="column3 diag2 ligne1">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-        </div>
-        <div class="line2">
-            <div class="column1 ligne2">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-            <div class="column2 diag1 diag2 ligne2">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-            <div class="column3 ligne2">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-        </div>
-        <div class="line3">
-            <div class="column1 diag2 ligne3">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-            <div class="column2 ligne3">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-            <div class="column3 diag1 ligne3">
-                <button class="free"></button>
-                <p class="invisible"></p>
-            </div>
-        </div>
-        </div>
-        
 
-        <aside class="result invisible">
-            <h2>test</h2>
+
+            <aside class="result invisible">
+                <h2>test</h2>
+            </aside>
+        </section>
+
+        <aside class="partieDroite">
+            <div class="stats">
+                <h2>Statistiques</h2>
+                <p> Parties jouées : <span class="nbplay"></span></p>
+                <p> Parties gagnées : <span class="nbwin"></span></p>
+                <p class="invisible"> Taux de réussite : <span class="pourcentage"></span>%</p>
+            </div>
+            <input type="button" value="Rejouer" onclick="window.location.reload()">
+
         </aside>
-    </section>
+    </main>
 
-    <aside class="partieDroite">
-        <div class="stats">
-            <h2>Statistiques</h2>
-            <p> Parties jouées : <span class="nbplay"></span></p>
-            <p> Parties gagnées : <span class="nbwin"></span></p>
-            <p class="invisible"> Taux de réussite : <span class="pourcentage"></span>%</p>
-        </div>
-        <input type="button" value="Rejouer" onclick="window.location.reload()">
 
-    </aside>
-</main>
-
-    
 
     <!-- Script JS -->
     <script src="js/statistiques.js"></script>
